@@ -9,18 +9,11 @@ export default function HomeScreen({ navigation }) {
 
   const streamOptions = ['Bio', 'Maths', 'Tech'];
   const districtOptions = [
-    'Badulla','Gampaha', 'Colombo', 'Kalutara', 'Kandy', 'Matale', 'NuwaraEliya', 'Galle', 'Matara', 'Hambantota', 'Jaffna', 'Kilinochchi', 'Mannar' , 'Monaragala' , 'Vavuniya', 'Mullaitivu', 'Batticaloa', 'Ampara', 'Trincomalee', 'Kurunagala', 'Puttalam', 'Anuradhapura', 'Pollonaruwa', 'Kegalle', 'Ratnapura'
-  ]; 
+    'Badulla', 'Gampaha', 'Colombo', 'Kalutara', 'Kandy', 'Matale', 'NuwaraEliya', 'Galle', 'Matara', 'Hambantota', 'Jaffna', 'Kilinochchi', 'Mannar', 'Monaragala', 'Vavuniya', 'Mullaitivu', 'Batticaloa', 'Ampara', 'Trincomalee', 'Kurunagala', 'Puttalam', 'Anuradhapura', 'Pollonaruwa', 'Kegalle', 'Ratnapura'
+  ];
 
   return (
     <View style={styles.container}>
-      <Text style={styles.label}>Z-Score</Text>
-      <TextInput
-        placeholder="Enter Z-Score"
-        keyboardType="numeric"
-        onChangeText={setZscore}
-        style={styles.input}
-      />
 
       <Text style={styles.label}>Select Stream</Text>
       <Picker
@@ -46,8 +39,16 @@ export default function HomeScreen({ navigation }) {
         ))}
       </Picker>
 
+      <Text style={styles.label}>Z-Score</Text>
+      <TextInput
+        placeholder="Enter Z-Score"
+        keyboardType="numeric"
+        onChangeText={setZscore}
+        style={styles.input}
+      />
+
       <Button
-        title="Get Recommendations"
+        title="Get Recommendation"
         onPress={() =>
           navigation.navigate('Results', { stream, district, zscore })
         }
@@ -67,6 +68,7 @@ const styles = StyleSheet.create({
     fontSize: 16,
   },
   picker: {
-    marginBottom: 15,
+    marginBottom: 5,
+  
   },
 });
